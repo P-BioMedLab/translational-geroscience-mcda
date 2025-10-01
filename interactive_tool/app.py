@@ -5,7 +5,7 @@ import numpy as np
 # Page configuration
 st.set_page_config(
     page_title="Translational Geroscience MCDA Ranking",
-    page_icon="",
+    page_icon="🧬",
     layout="wide"
 )
 
@@ -362,7 +362,7 @@ if 'weights' not in st.session_state:
 # Header
 st.markdown("""
 <div class="main-header">
-    <h1>🧬 Translational Geroscience MCDA Ranking</h1>
+    <h1> Translational Geroscience MCDA Ranking</h1>
     <p>Explore how different strategic priorities affect the ranking of 30 leading geroscience interventions.<br>
     Adjust domain weights to see real-time ranking changes based on your stakeholder perspective.</p>
 </div>
