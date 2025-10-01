@@ -1,0 +1,12 @@
+# Core dependencies for geroscience MCDA analysis
+numpy>=1.24.0
+pandas>=2.0.0
+matplotlib>=3.7.0
+scipy>=1.10.0
+
+# Optional: for enhanced visualizations
+seaborn>=0.12.0
+
+# Optional: for Excel file handling
+openpyxl>=3.1.0
+xlsxwriter>=3.1.0
