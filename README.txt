@@ -56,7 +56,7 @@ Launch interactive web tool:
     cd interactive_tool
     python app.py
 
-Access at https://aging-interventions-mcda.streamlit.app
+Access at https://aging-interventions-mcda-ranking.streamlit.app
 
 SCORING METHODOLOGY
 
