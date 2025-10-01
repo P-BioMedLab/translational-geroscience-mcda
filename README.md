@@ -34,6 +34,20 @@ output/
     ranking_robustness_weights_±5pct.xlsx           - Sensitivity analysis results
     sensitivity_analysis.xlsx                       - Weight perturbation testing
     supplementary_table_weighted_scores.xlsx        - Scoring breakdown
+requirements.txt                    - Python dependencies for analysis scripts
+```
+
+### Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+For the interactive web tool:
+
+```bash
+cd interactive_tool
+pip install -r requirements.txt
 ```
 
 ## Requirements
@@ -43,7 +57,9 @@ output/
 - Pandas 2.0+
 - Matplotlib 3.7+
 - SciPy 1.10+
-- Flask 2.3+ (for interactive tool)
+- Streamlit 1.28+ (for interactive tool)
+
+All dependencies are specified in `requirements.txt` for installation.
 
 ## Usage
 
@@ -63,10 +79,10 @@ python analysis/mc_ranking_analysis.py --perturbation 0.05
 
 ```bash
 cd interactive_tool
-python app.py
+streamlit run app.py
 ```
 
-Access at https://translational-geroscience-mcda-ranking.streamlit.app/
+Or access the deployed version at: https://translational-geroscience-mcda-ranking.streamlit.app/
 
 ## Scoring Methodology
 
@@ -106,7 +122,7 @@ All scores are derived from peer-reviewed literature, clinical trial databases, 
 All analyses use fixed random seeds. To reproduce published results exactly:
 
 ```bash
-python analysis/monte_carlo_simulation.py --seed 42 --iterations 10000
+python analysis/mc_ranking_analysis.py --seed 42 --iterations 10000
 ```
 
 ## License
@@ -115,6 +131,18 @@ python analysis/monte_carlo_simulation.py --seed 42 --iterations 10000
 - **Documentation:** CC BY 4.0
 - **Data:** CC BY 4.0
 
+## Citation
+
+If you use this framework in your research, please cite:
+
+```bibtex
+@software{geroscience_mcda_2025,
+  title = {Geroscience Interventions Ranking Framework},
+  author = {{P-BioMedLab}},
+  year = {2025},
+  url = {https://github.com/P-BioMedLab/translational-geroscience-mcda}
+}
+```
 ## Contact
 
 For questions regarding the framework or implementation, please open an issue in this repository.
