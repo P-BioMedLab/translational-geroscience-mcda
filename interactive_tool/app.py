@@ -5,7 +5,7 @@ import numpy as np
 # Page configuration
 st.set_page_config(
     page_title="Translational Geroscience MCDA Ranking",
-    page_icon="🧬",
+    page_icon="",
     layout="wide"
 )
 
