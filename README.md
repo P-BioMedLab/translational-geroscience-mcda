@@ -77,9 +77,11 @@ python analysis/mc_ranking_analysis.py --perturbation 0.05
 
 ### Launch interactive web tool
 
-** [Access Live Demo](https://htmlpreview.github.io/?https://github.com/P-BioMedLab/translational-geroscience-mcda/blob/main/interactive_tool/Interactive%20Geroscience%20Interventions%20Ranking.html)**
+Open the HTML file directly in your browser:
 
-Or access the deployed version at: https://translational-geroscience-mcda-ranking.streamlit.app/
+[Access Live Demo](https://htmlpreview.github.io/?https://github.com/P-BioMedLab/translational-geroscience-mcda/blob/main/interactive_tool/Interactive%20Geroscience%20Interventions%20Ranking.html)
+
+Or run the deployed version at: https://translational-geroscience-mcda-ranking.streamlit.app/
 
 ## Scoring Methodology
 
