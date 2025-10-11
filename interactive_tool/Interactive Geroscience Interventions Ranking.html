@@ -244,7 +244,7 @@
         .weighted-score-cell {
             text-align: center;
             font-weight: bold;
-            color: #27ae60;
+            color: #103e94;
             width: 100px;
         }
 
@@ -977,7 +977,7 @@
                     <td class="score-cell" onclick="showEvidence('${intervention.name}', 'safety')">${intervention.safety}</td>
                     <td class="score-cell" onclick="showEvidence('${intervention.name}', 'biomarkers')">${intervention.biomarkers}</td>
                     <td class="score-cell" onclick="showEvidence('${intervention.name}', 'cost')">${intervention.cost}</td>
-                    <td class="weighted-score-cell">${intervention.weightedScore.toFixed(2)}</td>
+                    <td class="weighted-score-cell">${intervention.weightedScore.toFixed(1)}</td>
                 `;
                 tbody.appendChild(row);
             });
