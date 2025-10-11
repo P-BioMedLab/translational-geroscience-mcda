@@ -15,7 +15,7 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: #2c3e50;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #809be6 0%, #243a8123 100%);
             min-height: 100vh;
         }
 
@@ -42,6 +42,20 @@
             opacity: 0.9;
             max-width: 800px;
             margin: 0 auto;
+        }
+
+        .info-note {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #1565c0;
+        }
+
+        .info-note strong {
+            color: #0d47a1;
         }
 
         .main-content {
@@ -203,6 +217,22 @@
             width: 80px;
             cursor: pointer;
             transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .score-cell::after {
+            content: '🔍';
+            position: absolute;
+            right: 2px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.7em;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .score-cell:hover::after {
+            opacity: 0.6;
         }
 
         .score-cell:hover {
@@ -449,6 +479,9 @@
 
             <div class="results-panel">
                 <h2>Intervention Rankings</h2>
+                <div class="info-note">
+                    Click on any score in the table below to view evidence, rationale, and references for that specific domain.
+                </div>
                 <div id="warning" class="warning" style="display: none;">
                     ⚠️ Warning: Total weights don't equal 100%. Adjust sliders to reach 100% for accurate results.
                 </div>
