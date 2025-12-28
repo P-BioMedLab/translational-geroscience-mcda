@@ -569,7 +569,7 @@ def create_multipanel_a_to_h(
     from pathlib import Path
 
     # Resolve working directory (same folder as this script)
-    here = Path(__file__).resolve().parent
+    here = Path.cwd()  # Use current working directory
 
     # Default stems in intended order (a–h)
     if fig_stems is None:
