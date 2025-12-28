@@ -190,6 +190,7 @@ def create_figure4(excel_data):
     
     # Plot points and collect text labels
     texts = []
+    text_to_intervention = {}  # Map text objects to (intervention_name, original_y)
     for _, row in df.iterrows():
         color = category_colors.get(row['Category'], 'gray')
         ax.plot(
@@ -201,15 +202,17 @@ def create_figure4(excel_data):
             color=color,
         )
         # Add text label with initial position offset to the right
+        original_y = row['Aging_Impact']
         t = ax.text(
             row['Translational_Readiness'] + 0.06,
-            row['Aging_Impact'],
+            original_y,
             row['Intervention'],
             fontsize=12,
             va='center',
             ha='left',
         )
         texts.append(t)
+        text_to_intervention[t] = (row['Intervention'], original_y)
     
     # Set exact axis limits
     ax.set_xlim(1, 5.5)
