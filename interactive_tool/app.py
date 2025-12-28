@@ -50,33 +50,58 @@ DOMAIN_NAMES = {
 }
 
 @st.cache_data
-def load_evidence_from_excel(filepath='evidence_map.xlsx'):
+def load_evidence_from_excel(filepath='evidence_map.xlsx', uploaded_file=None):
     """Load evidence data from Excel file and build the evidence database."""
     
-    # Try to find the file in different locations
-    # Assuming app.py is in interactive_tool and evidence_map.xlsx is in data folder
-    possible_paths = [
-        filepath,  # Current directory
-        os.path.join(os.path.dirname(__file__), filepath),  # Same directory as script
-        os.path.join(os.path.dirname(__file__), '..', 'data', filepath),  # ../data/ from script location
-        os.path.join('..', 'data', filepath),  # ../data/ from working directory
-        os.path.join('data', filepath),  # data/ subdirectory
-        '/mnt/user-data/uploads/' + filepath  # Container deployment
-    ]
-    
     df = None
-    for path in possible_paths:
-        try:
-            if os.path.exists(path):
-                df = pd.read_excel(path)
-                break
-        except Exception:
-            continue
     
+    # First, try to load from uploaded file if provided
+    if uploaded_file is not None:
+        try:
+            df = pd.read_excel(uploaded_file)
+        except Exception as e:
+            st.error(f"Error reading uploaded file: {e}")
+            return {}, []
+    
+    # If no uploaded file, try to find the file in different locations
     if df is None:
-        st.error(f"Could not find {filepath}. Please ensure the file is in the ../data/ directory relative to app.py")
-        st.info("Searched in: " + ", ".join(possible_paths))
-        return {}, []
+        # Get the absolute path of the current script
+        script_dir = os.path.dirname(os.path.abspath(__file__)) if '__file__' in globals() else os.getcwd()
+        
+        # Assuming app.py is in interactive_tool and evidence_map.xlsx is in data folder
+        possible_paths = [
+            filepath,  # Current directory
+            os.path.join(script_dir, filepath),  # Same directory as script
+            os.path.join(script_dir, '..', 'data', filepath),  # ../data/ from script location
+            os.path.join(os.getcwd(), '..', 'data', filepath),  # ../data/ from working directory
+            os.path.join(os.getcwd(), 'data', filepath),  # data/ subdirectory
+            os.path.join('..', 'data', filepath),  # ../data/ relative
+            os.path.join('data', filepath),  # data/ relative
+            '/mnt/user-data/uploads/' + filepath  # Container deployment
+        ]
+        
+        # Try each path
+        for path in possible_paths:
+            try:
+                # Normalize the path
+                normalized_path = os.path.normpath(path)
+                if os.path.exists(normalized_path):
+                    df = pd.read_excel(normalized_path)
+                    break
+            except Exception:
+                continue
+        
+        if df is None:
+            st.error(f"⚠️ Could not find {filepath}")
+            st.info("**Please upload the evidence_map.xlsx file using the uploader below.**")
+            with st.expander("🔍 Debug Info - Searched Locations"):
+                st.write("**Script directory:**", script_dir if 'script_dir' in locals() else "Unknown")
+                st.write("**Working directory:**", os.getcwd())
+                st.write("**Searched paths:**")
+                for p in possible_paths:
+                    exists = os.path.exists(os.path.normpath(p))
+                    st.write(f"- {os.path.normpath(p)} {'✅ EXISTS' if exists else '❌ NOT FOUND'}")
+            return {}, []
     
     # Clean intervention names (remove numbering)
     df['Intervention_Clean'] = df['Intervention'].str.replace(r'^\d+\.\s*', '', regex=True).str.strip()
@@ -112,7 +137,22 @@ def load_evidence_from_excel(filepath='evidence_map.xlsx'):
     return evidence_db, interventions_list
 
 # Load data from Excel
-EVIDENCE_DATABASE, INTERVENTIONS = load_evidence_from_excel()
+uploaded_file = None
+
+# Check if file exists in expected location, if not show upload widget
+if not any(os.path.exists(os.path.normpath(p)) for p in [
+    'evidence_map.xlsx',
+    '../data/evidence_map.xlsx',
+    'data/evidence_map.xlsx',
+    os.path.join(os.path.dirname(os.path.abspath(__file__)) if '__file__' in globals() else os.getcwd(), '..', 'data', 'evidence_map.xlsx')
+]):
+    st.warning("⚠️ Evidence file not found in expected location. Please upload evidence_map.xlsx:")
+    uploaded_file = st.file_uploader("Upload evidence_map.xlsx", type=['xlsx'], key='evidence_upload')
+    if uploaded_file is None:
+        st.info("The app is looking for the file at: ../data/evidence_map.xlsx")
+        st.stop()
+
+EVIDENCE_DATABASE, INTERVENTIONS = load_evidence_from_excel(uploaded_file=uploaded_file)
 
 # Header
 st.markdown("""
