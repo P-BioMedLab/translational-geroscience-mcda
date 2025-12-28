@@ -31,7 +31,7 @@ translational-geroscience-mcda/
 ├── output/                                 # Generated outputs
 │   ├── Intervention_list_&_scores.xlsx    # Enriched dataset with computed metrics
 │   ├── weighted_score_intervals.csv       # Score uncertainty (95% CI)
-│   ├── ranking_robustness_weights_±5%.csv # Rank stability analysis
+│   ├── ranking_robustness_weights_p5.csv # Rank stability analysis
 │   └── Figure*.tiff, *.eps                # Publication figures (if generated)
 │
 ├── interactive_tool/
@@ -165,7 +165,7 @@ Intervention | WeightedScore_Mean | WeightedScore_P2_5 | WeightedScore_P97_5
 ```
 Mean weighted score and 95% confidence bounds across MC simulations.
 
-**3. ranking_robustness_weights_±5%.csv**
+**3. ranking_robustness_weights_p5.csv**
 ```
 Intervention | BaseWeightedScore | MeanRank | Rank_P2_5 | Rank_P97_5 | P_Top1 | P_Top3
 ```
