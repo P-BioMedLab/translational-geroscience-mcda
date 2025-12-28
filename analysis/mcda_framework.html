@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCDA Framework for Geroscience Interventions</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.1/mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        .mermaid {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .mermaid svg {
+            max-width: 100%;
+            height: auto;
+        }
+        .mermaid .node rect,
+        .mermaid .node circle,
+        .mermaid .node polygon {
+            stroke-width: 2px;
+        }
+        .mermaid .nodeLabel {
+            font-size: 16px !important;
+            font-weight: 500;
+        }
+        .mermaid .edgeLabel {
+            font-size: 14px !important;
+        }
+        .info-box {
+            background: #ecf0f1;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+        .info-box h2 {
+            color: #34495e;
+            margin-top: 0;
+        }
+        .info-box ul {
+            color: #555;
+            line-height: 1.8;
+        }
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .legend-box {
+            width: 30px;
+            height: 20px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Multi-Criteria Decision Analysis Framework</h1>
+        <div class="subtitle">Ranking Geroscience Interventions for Translational Potential</div>
+        
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-box" style="background: #e1f5ff;"></div>
+                <span>Input</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box" style="background: #fff4e1;"></div>
+                <span>Framework</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box" style="background: #ffe1e1;"></div>
+                <span>Calculation</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box" style="background: #e1ffe1;"></div>
+                <span>Results</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box" style="background: #f0e1ff;"></div>
+                <span>Validation</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box" style="background: #ffe1f5;"></div>
+                <span>Output</span>
+            </div>
+        </div>
+
+        <div class="mermaid">
+graph TD
+    A[30 Geroscience<br/>Interventions] --> B[Multi-Criteria<br/>Decision Analysis]
+    
+    B --> C1[Preclinical Lifespan<br/>30% - Score: 1-5]
+    B --> C2[Human Trials<br/>20% - Score: 1-5]
+    B --> C3[Safety & Tolerability<br/>20% - Score: 1-5]
+    B --> C4[Preclinical Healthspan<br/>10% - Score: 1-5]
+    B --> C5[Mechanism<br/>10% - Score: 1-5]
+    B --> C6[Accessibility<br/>10% - Score: 1-5]
+    
+    C1 --> D[Weighted Sum<br/>Aggregation]
+    C2 --> D
+    C3 --> D
+    C4 --> D
+    C5 --> D
+    C6 --> D
+    
+    D --> E[Weighted Score =<br/>Î£ Score Ã— Weight]
+    
+    E --> F[Baseline<br/>Rankings 1-30]
+    
+    F --> G[Robustness<br/>Testing]
+    
+    G --> H1[Monte Carlo<br/>10,000 iterations<br/>95% CI]
+    
+    G --> H2[Sensitivity Analysis<br/>3 Stakeholder<br/>Weighting Schemes]
+    
+    H1 --> I[Validated<br/>Rankings]
+    H2 --> I
+    
+    I --> J[Interactive<br/>Web Tool]
+    
+    style A fill:#e1f5ff
+    style B fill:#fff4e1
+    style D fill:#ffe1e1
+    style E fill:#ffe1e1
+    style F fill:#e1ffe1
+    style G fill:#f0e1ff
+    style I fill:#e1ffe1
+    style J fill:#ffe1f5
+        </div>
+
+        <div class="info-box">
+            <h2>Methodology Overview</h2>
+            <ul>
+                <li><strong>Input:</strong> 30 candidate geroscience interventions (pharmacological, cellular, regenerative, and systemic)</li>
+                <li><strong>Evaluation Domains:</strong> Six criteria scored 1-5, with higher weighting on Lifespan (30%), Human Trials (20%), and Safety (20%)</li>
+                <li><strong>Aggregation:</strong> Weighted sum formula combines domain scores into final translational potential scores</li>
+                <li><strong>Validation:</strong> Monte Carlo simulation (n=10,000) and multi-stakeholder sensitivity analysis ensure ranking robustness</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            },
+            themeVariables: {
+                fontSize: '18px',
+                fontFamily: 'Arial, sans-serif'
+            }
+        });
+    </script>
+</body>
+</html>

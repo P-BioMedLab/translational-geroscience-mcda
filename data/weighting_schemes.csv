@@ -1,0 +1,5 @@
+﻿weighting_scheme,lifespan_efficacy,healthspan_efficacy,mechanism_conservation,human_trial_evidence,safety_tolerability,cost_accessibility,description
+baseline,0.3,0.1,0.1,0.2,0.2,0.1,Balanced weighting prioritizing human safety and evidence while preserving preclinical impact
+regulator_focused,0.1,0.1,0,0.3,0.4,0.1,Emphasizes safety profile and human evidence for regulatory approval pathways
+investor_focused,0.4,0.2,0.1,0.1,0.1,0.1,Prioritizes preclinical efficacy and measurable biomarkers for investment decisions
+patient_focused,0.15,0.15,0,0.25,0.3,0.15,Balances safety with clinical evidence and affordability for patient accessibility
