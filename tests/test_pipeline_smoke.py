@@ -26,7 +26,7 @@ def test_pipeline_smoke(tmp_path):
         out_dir.rmdir()
 
     # Run pipeline quickly
-run(["python", "run_pipeline.py", "-i", "analysis/Intervention_scores.xlsx", "--mc-runs", "200", "-o", "test_output"])
+    run(["python", "run_pipeline.py", "-i", "analysis/Intervention_scores.xlsx", "--mc-runs", "200", "-o", "test_output"])
 
     # Assert key outputs exist (per README contract)
     expected = [
