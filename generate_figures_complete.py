@@ -373,7 +373,7 @@ def create_figure7(excel_data):
     stakeholder_data = {
         'Baseline': df_selected['Weighted score'].values,
         'Regulator-Focused': df_selected['Regulator-Focused'].values,
-        'Investor-Focused': df_selected['Investor-Focused '].values,  # Note: trailing space in Excel
+        'Investor-Focused': df_selected['Investor-Focused'].values,
         'Patient-Focused': df_selected['Patient-Focused'].values
     }
     
