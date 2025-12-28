@@ -145,7 +145,7 @@ Examples:
     if not args.figures_only and not args.skip_mc:
         run_command(
             [
-                sys.executable, 'mc_ranking_analysis.py',
+                sys.executable, 'analysis/mc_ranking_analysis.py',
                 '-i', str(args.input),
                 '-s', args.sheet,
                 '-r', str(args.mc_runs),
