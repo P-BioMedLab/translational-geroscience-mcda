@@ -341,6 +341,17 @@ st.markdown("""
 col1, col2 = st.columns([1, 2])
 
 with col1:
+    # Preset buttons (moved to top to execute first)
+    st.subheader("📋 Presets")
+    preset_cols = st.columns(2)
+    
+    for idx, (preset_name, preset_values) in enumerate(PRESETS.items()):
+        col_idx = idx % 2
+        with preset_cols[col_idx]:
+            if st.button(preset_name, key=f"preset_{preset_name}", use_container_width=True):
+                st.session_state.weights = preset_values.copy()
+                st.rerun()
+    
     st.subheader("⚙️ Adjust Domain Weights")
     
     # Weight sliders
@@ -360,17 +371,6 @@ with col1:
         st.success(f"✅ Total Weight: {total_weight}%")
     else:
         st.error(f"⚠️ Total Weight: {total_weight}% (Must equal 100%)")
-    
-    # Preset buttons
-    st.subheader("📋 Presets")
-    preset_cols = st.columns(2)
-    
-    for idx, (preset_name, preset_values) in enumerate(PRESETS.items()):
-        col_idx = idx % 2
-        with preset_cols[col_idx]:
-            if st.button(preset_name, key=f"preset_{preset_name}", width='stretch'):
-                st.session_state.weights = preset_values.copy()
-                st.rerun()
 
 with col2:
     st.subheader("📊 Intervention Rankings")
