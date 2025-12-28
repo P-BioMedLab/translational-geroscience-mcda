@@ -21,5 +21,5 @@ abstract: >
   An evidence-weighted multi-criteria decision analysis (MCDA) framework and interactive web tool
   for prioritizing translational geroscience interventions across predefined domains, with scripts
   to reproduce manuscript figures and tables from curated inputs.
-version: "1.0.1"
+version: "1.0.2"
 date-released: "2025-12-28"
