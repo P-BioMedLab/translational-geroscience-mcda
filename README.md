@@ -19,7 +19,7 @@ This repository contains the computational framework, scoring matrices, and inte
 ```
 translational-geroscience-mcda/
 ├── analysis/
-│   └── mc_ranking_analysis_enhanced.py    # All-in-one analysis script
+│   └── mc_ranking_analysis.py    # All-in-one analysis script
 │
 ├── data/
 │   ├── Intervention_scores.xlsx           # Raw domain scores (input)
@@ -68,7 +68,7 @@ This runs the complete pipeline in ~2-5 minutes and generates all outputs in the
 
 **Option 2: Run Analysis Script Directly**
 ```bash
-python analysis/mc_ranking_analysis_enhanced.py \
+python analysis/mc_ranking_analysis.py \
     -i data/Intervention_scores.xlsx \
     -r 10000 \
     -o output/
@@ -201,7 +201,7 @@ All analyses use fixed random seeds to ensure reproducibility:
 To reproduce published results exactly:
 
 ```bash
-python analysis/mc_ranking_analysis_enhanced.py \
+python analysis/mc_ranking_analysis.py \
     --seed_scores 42 \
     --seed_weights 123 \
     -r 10000 \
