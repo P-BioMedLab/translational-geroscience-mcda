@@ -4,6 +4,7 @@ title: "Translational Geroscience MCDA: An evidence-weighted decision framework 
 type: software
 repository-code: "https://github.com/P-BioMedLab/translational-geroscience-mcda"
 url: "https://github.com/P-BioMedLab/translational-geroscience-mcda"
+doi: 10.5281/zenodo.18075835
 license: AGPL-3.0-only
 authors:
   - family-names: "B"
@@ -20,5 +21,5 @@ abstract: >
   An evidence-weighted multi-criteria decision analysis (MCDA) framework and interactive web tool
   for prioritizing translational geroscience interventions across predefined domains, with scripts
   to reproduce manuscript figures and tables from curated inputs.
-version: "0.1.0"
+version: "1.0.1"
 date-released: "2025-12-28"
