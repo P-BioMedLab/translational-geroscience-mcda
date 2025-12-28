@@ -390,7 +390,7 @@ with col2:
                 "Conservation": intervention["conservation"],
                 "Human": intervention["human"],
                 "Safety": intervention["safety"],
-                "access": intervention["access"],
+                "Access": intervention["access"],
                 "Weighted Score": round(weighted_score, 2)
             })
         
@@ -407,7 +407,7 @@ with col2:
         df.loc[df['Weighted Score'].isin(tied_scores), 'Rank'] = df.loc[df['Weighted Score'].isin(tied_scores), 'Rank']
         
         # Reorder columns to put Rank first
-        df = df[['Rank', 'Intervention', 'Lifespan', 'Healthspan', 'Conservation', 'Human', 'Safety', 'Cost', 'Weighted Score']]
+        df = df[['Rank', 'Intervention', 'Lifespan', 'Healthspan', 'Conservation', 'Human', 'Safety', 'Access', 'Weighted Score']]
         df = df.drop(columns=['Rank_Num'], errors='ignore')
         
         return df
