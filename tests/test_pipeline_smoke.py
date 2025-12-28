@@ -32,7 +32,7 @@ def test_pipeline_smoke(tmp_path):
     expected = [
         out_dir / "Intervention_list_&_scores.xlsx",
         out_dir / "weighted_score_intervals.csv",
-        out_dir / "ranking_robustness_weights_±5%.csv",
+        out_dir / "ranking_robustness_weights_p5.csv",
     ]
     missing = [str(p) for p in expected if not p.exists()]
     assert not missing, f"Missing expected outputs: {missing}"
