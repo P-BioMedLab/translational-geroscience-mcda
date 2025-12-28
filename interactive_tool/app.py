@@ -349,7 +349,12 @@ with col1:
         col_idx = idx % 2
         with preset_cols[col_idx]:
             if st.button(preset_name, key=f"preset_{preset_name}", use_container_width=True):
+                # Update weights
                 st.session_state.weights = preset_values.copy()
+                # Clear slider keys to force them to reinitialize with new values
+                for domain in DOMAIN_NAMES.keys():
+                    if f"slider_{domain}" in st.session_state:
+                        del st.session_state[f"slider_{domain}"]
                 st.rerun()
     
     st.subheader("⚙️ Adjust Domain Weights")
