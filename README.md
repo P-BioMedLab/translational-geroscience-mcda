@@ -93,12 +93,11 @@ Weighted Score = Σ(Domain_Score_i × Weight_i)
 
 ### Domain weights (baseline)
 
-- **Preclinical Efficacy (Lifespan):** 20%
+- **Preclinical Efficacy (Lifespan):** 30%
 - **Preclinical Efficacy (Healthspan):** 10%
 - **Mechanism Conservation:** 10%
 - **Human Trial Evidence:** 20%
 - **Safety & Tolerability:** 20%
-- **Biomarker Availability:** 10%
 - **Cost & Accessibility:** 10%
 
 ## Uncertainty Quantification
