@@ -19,7 +19,7 @@ This repository contains the computational framework, scoring matrices, and inte
 ```
 translational-geroscience-mcda/
 ├── analysis/
-│   └── mc_ranking_analysis_enhanced.py    # All-in-one analysis script ⭐
+│   └── mc_ranking_analysis_enhanced.py    # All-in-one analysis script
 │
 ├── data/
 │   ├── Intervention_scores.xlsx           # Raw domain scores (input)
