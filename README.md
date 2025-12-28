@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18075835.svg)](https://doi.org/10.5281/zenodo.18075835)
+
 # Geroscience Interventions Ranking Framework
 
 ## Overview
@@ -131,16 +133,18 @@ python analysis/mc_ranking_analysis.py --seed 42 --iterations 10000
 
 ## Citation
 
-If you use this framework in your research, please cite:
+If you use this framework or the accompanying web tool, please cite:
 
 ```bibtex
 @software{geroscience_mcda_2025,
-  title = {Geroscience Interventions Ranking Framework},
+  title = {Translational Geroscience MCDA: An evidence-weighted decision framework and interactive tool},
   author = {{P-BioMedLab}},
   year = {2025},
+  (v1.0.1). Zenodo. https://doi.org/10.5281/zenodo.18075835,
   url = {https://github.com/P-BioMedLab/translational-geroscience-mcda}
 }
 ```
+
 ## Contact
 
 For questions regarding the framework or implementation, please open an issue in this repository.
