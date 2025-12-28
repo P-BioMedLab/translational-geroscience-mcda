@@ -30,10 +30,9 @@ interactive_tool/
     Interactive Geroscience Interventions Ranking - HTML template
 
 output/
-    mcda_scoring-ranking.xlsx                       - Final ranked interventions
     ranking_robustness_weights_±5pct.xlsx           - Sensitivity analysis results
     sensitivity_analysis.xlsx                       - Weight perturbation testing
-    supplementary_table_weighted_scores.xlsx        - Scoring breakdown
+    weighted_score_intervals.xlsx        - Scoring breakdown
 requirements.txt                    - Python dependencies for analysis scripts
 ```
 
