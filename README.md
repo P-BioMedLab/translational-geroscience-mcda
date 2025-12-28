@@ -18,6 +18,7 @@ data/
     scoring_matrix.csv              - Raw domain scores for all interventions
     weighting_schemes.csv           - Domain weights for different stakeholders
     evidence_map.csv                - Links between scores and primary sources
+    lifespan_data.xlsx              - Raw data for net lifespan score
 
 analysis/
     mcda_framework.html             - Framework documentation and methodology
