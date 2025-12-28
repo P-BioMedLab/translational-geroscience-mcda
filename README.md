@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains the computational framework, scoring matrices, and interactive tools supporting the multi-criteria decision analysis (MCDA) of 30 geroscience interventions. The framework evaluates translational readiness across seven domains: preclinical efficacy (lifespan and healthspan), mechanism conservation, human trial evidence, safety and tolerability, biomarker availability, and cost-accessibility.
+This repository contains the computational framework, scoring matrices, and interactive tools supporting the multi-criteria decision analysis (MCDA) of 30 geroscience interventions. The framework evaluates translational readiness across six domains: preclinical efficacy (lifespan and healthspan), mechanism conservation, human trial evidence, safety and tolerability, biomarker availability, and cost-accessibility.
 
 ## Key Features
 
@@ -85,7 +85,7 @@ Or run the deployed version at: https://translational-geroscience-mcda-ranking.s
 
 ## Scoring Methodology
 
-Each intervention receives scores from 1-5 across seven domains according to predefined rubrics. Final weighted scores are calculated as:
+Each intervention receives scores from 1-5 across six domains according to predefined rubrics. Final weighted scores are calculated as:
 
 ```
 Weighted Score = Σ(Domain_Score_i × Weight_i)
