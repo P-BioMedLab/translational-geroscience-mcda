@@ -1,0 +1,34 @@
+{
+  "name": "lifespan_data",
+  "title": "Lifespan evidence extraction and derived scoring",
+  "description": "Study-level extraction for lifespan effects and derived scoring fields used to compute Net Lifespan Score.",
+  "fields": [
+    { "name": "Category", "type": "string", "constraints": { "required": true } },
+    { "name": "Description/mechanism", "type": "string" },
+
+    { "name": "species", "type": "string", "constraints": { "required": true } },
+    { "name": "Delivery mode", "type": "string" },
+    { "name": "Strain", "type": "string" },
+
+    { "name": "Average Lifespan change", "type": "number" },
+    { "name": "Lifespan change note", "type": "string" },
+
+    { "name": "Transgenic/progeroid/diseased", "type": "string" },
+    { "name": "ITP", "type": "string", "constraints": { "enum": ["Yes", "No"] } },
+
+    { "name": "Lifespan score", "type": "number", "constraints": { "minimum": 1, "maximum": 5 } },
+    { "name": "Model score", "type": "number" },
+    { "name": "Studies Count", "type": "integer", "constraints": { "minimum": 0 } },
+    { "name": "Reproduced study score", "type": "number" },
+    { "name": "Net Lifespan Score", "type": "number" },
+
+    { "name": "Gender", "type": "string" },
+    { "name": "Pubmed ID", "type": "string" },
+    { "name": "DOI", "type": "string" },
+    { "name": "Year", "type": "integer" },
+    { "name": "Main author", "type": "string" },
+
+    { "name": "Excluded", "type": "string", "constraints": { "enum": ["Yes", "No"] } },
+    { "name": "Limitation", "type": "string" }
+  ]
+}

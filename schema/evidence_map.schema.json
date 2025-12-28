@@ -1,0 +1,27 @@
+{
+  "name": "evidence_map",
+  "title": "Evidence map (score justifications + references)",
+  "description": "Links each intervention-domain score to a short justification and a reference string (DOI/PMID/citation).",
+  "fields": [
+    { "name": "Intervention", "type": "string", "constraints": { "required": true } },
+    {
+      "name": "Domain",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "enum": [
+          "Preclinical Efficacy (Lifespan)",
+          "Preclinical Efficacy (Healthspan)",
+          "Human Trial Evidence",
+          "Mechanism Conservation",
+          "Safety & Tolerability",
+          "Safety & Tolerability (in Humans)",
+          "Cost & Accessibility"
+        ]
+      }
+    },
+    { "name": "Score", "type": "number", "constraints": { "required": true, "minimum": 1, "maximum": 5 } },
+    { "name": "Evidence", "type": "string", "constraints": { "required": true } },
+    { "name": "Reference", "type": "string", "constraints": { "required": true } }
+  ]
+}

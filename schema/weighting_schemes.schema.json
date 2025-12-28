@@ -1,0 +1,18 @@
+{
+  "name": "weighting_schemes",
+  "title": "Weighting schemes for MCDA domains",
+  "description": "Baseline and stakeholder weighting schemes. Domain weights are expected to sum to 1.0 for each scheme.",
+  "primaryKey": "weighting_scheme",
+  "fields": [
+    { "name": "weighting_scheme", "type": "string", "constraints": { "required": true, "pattern": "^[a-z0-9_\\-]+$" } },
+
+    { "name": "lifespan_efficacy", "type": "number", "constraints": { "required": true, "minimum": 0, "maximum": 1 } },
+    { "name": "healthspan_efficacy", "type": "number", "constraints": { "required": true, "minimum": 0, "maximum": 1 } },
+    { "name": "mechanism_conservation", "type": "number", "constraints": { "required": true, "minimum": 0, "maximum": 1 } },
+    { "name": "human_trial_evidence", "type": "number", "constraints": { "required": true, "minimum": 0, "maximum": 1 } },
+    { "name": "safety_tolerability", "type": "number", "constraints": { "required": true, "minimum": 0, "maximum": 1 } },
+    { "name": "cost_accessibility", "type": "number", "constraints": { "required": true, "minimum": 0, "maximum": 1 } },
+
+    { "name": "description", "type": "string" }
+  ]
+}

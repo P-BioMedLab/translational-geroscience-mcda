@@ -1,0 +1,15 @@
+{
+  "name": "scoring_matrix",
+  "title": "Domain scoring rubric (1–5)",
+  "description": "Rubric definitions for each domain score used in the Translational Geroscience MCDA.",
+  "primaryKey": "Score",
+  "fields": [
+    { "name": "Score", "type": "integer", "constraints": { "required": true, "minimum": 1, "maximum": 5 } },
+    { "name": "Preclinical Efficacy (Lifespan)", "type": "string", "constraints": { "required": true } },
+    { "name": "Preclinical Efficacy (Healthspan)", "type": "string", "constraints": { "required": true } },
+    { "name": "Human Trial Evidence", "type": "string", "constraints": { "required": true } },
+    { "name": "Mechanism Conservation", "type": "string", "constraints": { "required": true } },
+    { "name": "Safety & Tolerability (in Humans)", "type": "string", "constraints": { "required": true } },
+    { "name": "Cost & Accessibility", "type": "string", "constraints": { "required": true } }
+  ]
+}
