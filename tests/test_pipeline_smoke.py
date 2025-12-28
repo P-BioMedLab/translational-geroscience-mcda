@@ -39,9 +39,9 @@ def test_pipeline_smoke(tmp_path):
 
     # Basic sanity checks on intervals CSV
     df = pd.read_csv(out_dir / "weighted_score_intervals.csv")
-    # adjust column names as needed once standardized:
-    for col in ["weighted_score", "ci_lower", "ci_upper"]:
+    # Check for actual column names produced by the pipeline
+    for col in ["WeightedScore_Mean", "WeightedScore_P2_5", "WeightedScore_P97_5"]:
         assert col in df.columns, f"Expected column '{col}' not found in weighted_score_intervals.csv"
 
-    assert (df["ci_lower"] <= df["weighted_score"]).all()
-    assert (df["weighted_score"] <= df["ci_upper"]).all()
+    assert (df["WeightedScore_P2_5"] <= df["WeightedScore_Mean"]).all()
+    assert (df["WeightedScore_Mean"] <= df["WeightedScore_P97_5"]).all()
