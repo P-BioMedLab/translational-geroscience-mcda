@@ -230,7 +230,7 @@ If you use this framework, analysis pipeline, or the interactive web tool, pleas
 ```bibtex
 @software{geroscience_mcda_2025,
   title = {Translational Geroscience MCDA: An evidence-weighted decision framework and interactive tool},
-  author = {{P-BioMedLab}},
+  author = {{Bouvet, Paul}},
   year = {2025},
   version = {1.0.2},
   doi = {10.5281/zenodo.18075835},
