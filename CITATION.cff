@@ -7,8 +7,8 @@ url: "https://github.com/P-BioMedLab/translational-geroscience-mcda"
 doi: 10.5281/zenodo.18075835
 license: AGPL-3.0-only
 authors:
-  - family-names: "B"
-    given-names: ""
+  - family-names: "Bouvet"
+    given-names: "Paul"
 keywords:
   - geroscience
   - aging
